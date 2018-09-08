@@ -1,21 +1,22 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "description": "Medhacks App",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "keywords": [
-    "medhacks"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronakdev/patrick.io.git"
+  },
   "author": "ronakdev",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ronakdev/patrick.io/issues"
+  },
+  "homepage": "https://github.com/ronakdev/patrick.io#readme",
   "dependencies": {
-    "child_process": "^1.0.2",
-    "express": "^4.16.3",
-    "net": "^1.0.2",
-    "osc": "^2.2.4"
+    "express": "^4.16.3"
   }
 }

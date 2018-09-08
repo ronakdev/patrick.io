@@ -1,23 +1,13 @@
 const express = require('express')
 const app = express()
+const BrainActivity = require('./BrainActivity.js')
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.use('/', express.static('public'))
 
+app.get('/app', (req, res) => {
+	// actual legit code 
+	let view = new BrainActivity(req, res)
+	view.renderHTML()
+
+})
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
-
-const osc = require('osc')
-
-let oscPort = new osc.TCPSocketPort({
-	url: "tcp://127.0.0.1:5002",
-	metadata: true
-})
-
-oscPort.open()
-
-oscPort.on("message", function(oscMsg) {
-	console.log(oscMsg)
-})
-
-oscPort.on("error", function(error) {
-	console.error(error)
-})
