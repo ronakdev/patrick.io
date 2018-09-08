@@ -20,7 +20,7 @@ module.exports = class Receiver {
 		  	// now we have each row of 
 		  	// 1536415048.86 /muse/eeg ffff 781.37 677.73 669.51 824.14
 		  	// formatted strings
-		  	onDataCallback(array[0]) // choose 0-3
+		  	onDataCallback(array.map((a => parseInt(a)))) // choose 0-3
 		  })
 
 		});
