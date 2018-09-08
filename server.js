@@ -1,6 +1,26 @@
-var chart = new SmoothieChart({millisPerPixel:100,grid:{strokeStyle:'#7f7e80'},labels:{fontSize:12},maxValue:10000,minValue:-10000}),
-    canvas = document.getElementById('smoothie-chart'),
-    series = new TimeSeries();
+/* HTML CODE: <canvas id="smoothie-chart" width="600" height="200"></canvas> */
 
-chart.addTimeSeries(series, {lineWidth:2.8,strokeStyle:'#00fdff'});
-chart.streamTo(canvas, 0);
+
+var smoothie = new SmoothieChart({grid:{strokeStyle:'#009bff'}}),
+    canvas = document.getElementById('smoothie-chart')
+
+
+var EEG1 = new TimeSeries();
+var TopConstant = new TimeSeries();
+var BottomConstant = new TimeSeries();
+
+
+setInterval(function() {
+  EEG1.append(new Date().getTime(), Math.random());
+  TopConstant.append(new Date().getTime(), 0.5) ;
+  BottomConstant.append(newDate().getTime(), 0.4) ;
+}, 1000);
+
+smoothie.addTimeSeries(EEG1, {lineWidth:3.4,strokeStyle:'#c2f3ff'});
+smoothie.addTimeSeries(TopConstant, {lineWidth: 3.4, strokeStyle: '#7841e5'}) ;
+smoothie.addTimeSeries(BottomConstant, {lineWidth: 3.4, strokeStyle: '#7841e5'}) ;
+smoothie.streamTo(canvas, 500) ; 
+
+
+
+
