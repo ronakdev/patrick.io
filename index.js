@@ -8,7 +8,7 @@ const Receiver = require('./Receiver.js')
 
 app.use('/', express.static('public'))
 
-app.get('/app', function(req, res){
+app.get('/application', function(req, res){
 	let receiver = new Receiver(6000, (data) => {
 		console.log(data)
 		io.emit('eeg-data', data)
