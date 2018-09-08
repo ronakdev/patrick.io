@@ -6,6 +6,8 @@ const port = process.env.PORT || 3000;
 const MuseConnector = require('./MuseConnector.js')
 const Receiver = require('./Receiver.js')
 
+app.use('/', express.static('public'))
+
 app.get('/app', function(req, res){
 	let receiver = new Receiver(6000, (data) => {
 		console.log(data)
