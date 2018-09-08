@@ -2,7 +2,7 @@ module.exports = class MuseConnector {
 	constructor(port) {
 		var spawn = require('child_process').spawn,
 		ls = spawn('muse-io', ['--osc', `osc.tcp://localhost:${port}`]);
- 
+
 		ls.stdout.on('data', function (data) {
 			console.log('stdout: ' + data.toString());
 		  	// ideally do a callback here and tell the public once its working
@@ -15,7 +15,7 @@ module.exports = class MuseConnector {
 		});
 
 		ls.on('exit', function (code) {
-		  console.log('child process exited with code ' + code);
+		  console.log('child process exited with code ' + code.toString());
 		});
 	}
 }

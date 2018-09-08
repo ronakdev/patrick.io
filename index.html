@@ -1,0 +1,47 @@
+<DOCTYPE html>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<h1>Status: <span id="status">Not Used
+	</span></h1>
+	<canvas id="smoothie-chart" width="600" height="200"></canvas>
+
+<script src="/socket.io/socket.io.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothie/1.34.0/smoothie.min.js"></script>
+	<script>
+		var smoothie = new SmoothieChart({grid:{strokeStyle:'#009bff'}}),
+	    canvas = document.getElementById('smoothie-chart')
+
+
+		var EEG1 = new TimeSeries();
+		var TopConstant = new TimeSeries();
+		var BottomConstant = new TimeSeries();
+		let socket = io();
+		socket.on('eeg-data', function(data){
+			// some float
+			console.log(data)
+			EEG1.append(new Date().getTime(), 30)
+	    });
+
+		setInterval(function() {
+		  // EEG1.append(new Date().getTime(), () => {
+		  // 	// do socket magic
+
+		  // 	return 30
+		  // });
+		  TopConstant.append(new Date().getTime(), 0.5) ;
+		  BottomConstant.append(new Date().getTime(), 0.4) ;
+		}, 1000);
+
+		smoothie.addTimeSeries(EEG1, {lineWidth:3.4,strokeStyle:'#c2f3ff'});
+		smoothie.addTimeSeries(TopConstant, {lineWidth: 3.4, strokeStyle: '#7841e5'}) ;
+		smoothie.addTimeSeries(BottomConstant, {lineWidth: 3.4, strokeStyle: '#7841e5'}) ;
+		smoothie.streamTo(canvas, 500) ; 
+
+	</script>
+</html>	
+
