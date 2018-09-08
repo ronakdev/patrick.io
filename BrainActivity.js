@@ -7,7 +7,15 @@ module.exports = class BrainActivity {
 
 
 		// we need to first create the muse-io server
-		
+
+		let receiver = new Receiver(6000, (data) => {
+			// do something with the single float data
+			
+		})
+		// now lets do the muse
+
+		let connector = new MuseConnector(6000)
+
 	}
 
 	renderHTML() {
