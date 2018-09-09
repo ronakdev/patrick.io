@@ -28,6 +28,8 @@
 	<canvas id="smoothie-chart" width = "1000" height="400"></canvas>
 </center>
   </div>
+  	<button id = "myButton" onclick="myJS()">Click Here</button>
+  </div>	
 </div>
 <br/>
 <br/>
@@ -72,12 +74,45 @@
 		var EEG1 = new TimeSeries();
 		var TopConstant = new TimeSeries();
 		var BottomConstant = new TimeSeries();
-		// let socket = io();
-		// socket.on('eeg-data', function(data){
-			// some float
-			// console.log(data)
-			// EEG1.append(new Date().getTime(), data)
-	    // });
+		let timeElapsed = -1
+		let socket = io();
+		let baseline = 0 // updated
+		let delta = 0 // this is the allowed delta
+		let x = 0
+		let ave = -1
+		function myJS(){
+			if(x==0){
+				x=1
+			}
+		}
+		socket.on('eeg-data', function(data){
+			// data is broken into time and b1 and b2 (time, temple, forehead respectively)
+
+			/* if (timeElapsed == -1) {
+				// this the first time
+				timeElapsed = time	
+			} else {
+				// 99         100    99
+				timeElapsed += (time - timeElapsed)
+			} */
+
+				if (x==1){
+					let temple = data[1]
+					let forehead = data[2]
+					let ave = ((temple+forehead)/2) 
+					let button = document.getElementById("myButton")
+					button.style.display == 'block' ;
+					x=0;
+				}
+			
+			}
+				
+			console.log(ave)
+
+			
+
+			EEG1.append(new Date().getTime(), (data[1]+data[2])/2)
+	    });
 
 		setInterval(function() {
 		  // EEG1.append(new Date().getTime(), () => {
@@ -85,8 +120,11 @@
 
 		  // 	return 30
 		  // });
-		  TopConstant.append(new Date().getTime(), 0.5) ;
-		  BottomConstant.append(new Date().getTime(), 0.4) ;
+		  if (ave !=-1){
+		  	TopConstant.append(new Date().getTime(), ave + 0.2) ;
+		  	BottomConstant.append(new Date().getTime(), ave - 0.2) ;
+		  }
+		  
 		}, 1000);
 
 		smoothie.addTimeSeries(EEG1, {lineWidth:3.4,strokeStyle:'#c2f3ff'});
