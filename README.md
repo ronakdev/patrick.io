@@ -1,4 +1,3 @@
-
 ## Inspiration
 
 Being born deaf, Ellaine has faced the challenges that tens of millions of Americans. After over a decade of using hearing aids, Ellaine and her family decided that a cochlear implant would be the best treatment option. But what should be a solution to the issue turned into a series of long, arduous meetings with an audiologist that relies on "gut feeling" and inaccurate, qualitative trial and error to tune the cochlear implants. Given her personal experience, we were enthusiastic about seeing how we can solve this process for her and many others across the world who have cochlear implants.
