@@ -81,9 +81,12 @@
 		let x = 0
 		let ave = -1
 		function myJS(){
+			alert()
 			if(x==0){
+				print("first time")
 				x=1
 			}
+			print("second time")
 		}
 		socket.on('eeg-data', function(data){
 			// data is broken into time and b1 and b2 (time, temple, forehead respectively)
@@ -97,6 +100,7 @@
 			} */
 
 				if (x==1){
+					print("button is clicked second time")
 					let temple = data[1]
 					let forehead = data[2]
 					let ave = ((temple+forehead)/2) 
@@ -105,7 +109,7 @@
 					x=0;
 				}
 			
-			}
+			
 				
 			console.log(ave)
 
@@ -120,10 +124,14 @@
 
 		  // 	return 30
 		  // });
+
+		  print("in setInterval")
 		  if (ave !=-1){
+		  	print("average already set")
 		  	TopConstant.append(new Date().getTime(), ave + 0.2) ;
 		  	BottomConstant.append(new Date().getTime(), ave - 0.2) ;
 		  }
+		  print("end of setInterval")
 		  
 		}, 1000);
 
