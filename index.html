@@ -24,7 +24,7 @@
 		socket.on('eeg-data', function(data){
 			// some float
 			console.log(data)
-			EEG1.append(new Date().getTime(), 30)
+			EEG1.append(new Date().getTime(), data)
 	    });
 
 		setInterval(function() {
