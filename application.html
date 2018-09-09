@@ -61,17 +61,17 @@
 		                <canvas id="smoothie-chart" width = "1000" height="400"></canvas>
 		            </center>
 		        </div>
-		        <button id = "myButton" onclick="myJS()">Begin Relaxing</button> <h4>Range: <span id="rangeLabel">50</span></h4>
+		        <button id = "myButton" onclick="myJS()">Begin Relaxing</button> <h4>Range: <span id="rangeLabel">200</span></h4>
 		    </div>
 		    <br/>
 		    <br/>
 		    <div class="row">
-	    	  <input type="range" min="0" max="300" value="150" class="slider" id="myRange" onchange="delta = this.value ; document.getElementById('rangeLabel').innerHTML = this.value">
+	    	  <input type="range" min="0" max="400" value="200" class="slider" id="myRange" onchange="delta = this.value ; document.getElementById('rangeLabel').innerHTML = this.value">
 	    	</div>
 		    <div class="row">
 		        <div class="col-4 col-md-4">
 		            <h3>Step 1</h3>
-		            <p>Have the patient don the head set with the band portion snugly contacting the skin of the forehead. WHen ready to begin, click the “begin relaxing” button.  Visually confirm with the data output that the headset is streaming to the computer, ensuring that power is on and bluetooth is enabled.
+		            <p>Have the patient don the head set with the band portion snugly contacting the skin of the forehead. When ready to begin, click the “begin relaxing” button.  Visually confirm with the data output that the headset is streaming to the computer, ensuring that power is on and bluetooth is enabled.
 		            </p>
 		        </div>
 		        <div class="col-4 col-md-4">
@@ -102,7 +102,7 @@
 		let timeElapsed = -1
 		let socket = io();
 		let baseline = 0 // updated
-		var delta = 50 // this is arbitrary
+		var delta = 200 // this is arbitrary
 		let x = 0
 		let ave = -1
 		let b1Avg = 0
