@@ -825,8 +825,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5a6e', end
 .clients-list figure { margin-bottom: 0; }
 
 .clients-list img {
-  width: 200px;
-  height: 100px;
+  /*width: 200px;*/
+  /*height: 100px;*/
   transition: all 1s ease;
   opacity: .5;
 }
@@ -1257,4 +1257,12 @@ ul.countdown li p { font-size: 16px; }
 .site-footer .container > .row > [class^=col] { margin-bottom: 0 !important; }
 
 .terms-privacy { text-align: right; }
+}
+
+#myVideo {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    background-position: top center;
+  filter: brightness(50%);
 }

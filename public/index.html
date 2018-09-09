@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <!-- Mirrored from csmthemes.com/themes/startr_/click-through/video/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Sep 2018 13:33:23 GMT -->
@@ -10,13 +9,22 @@
 <title>Patrick_I/O</title>
 <meta name="description" content="Startup landing page">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
-<link rel="manifest" href="img/favicons/manifest.html">
-<link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="img/favicons/favicon.ico">
-<meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+<link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/owl.carousel.min.css" rel="stylesheet">
@@ -31,31 +39,27 @@
 <header class="hero-section" id="hero-section">
 
   <!--HTML5 Video-->
-  <video autoplay loop muted class="video-bg-hero" poster="video/video-bg/poster.jpg">
-    <!--<source src="video/video-bg/vb.mp4" type="video/mp4">-->
-    <!--<source src="video/video-bg/vb.webm" type="video/webm">-->
-  </video>
 
   <!--HTML5 Video end-->
+   <video autoplay loop muted id="myVideo">
+    <source src="vid.mp4" type="video/mp4">
+  </video>
+
 
   <!--navigation-->
 
   <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container"> <a class="navbar-brand" href="#"> <img class="logo" src="https://i.imgur.com/GX4CEzf.png" alt="logo"><img class="logo-nav" src="https://i.imgur.com/GX4CEzf.png" alt="logo-nav"></a>
+    <div class="container"> <a class="navbar-brand" href="#"> <img class="logo" src="https://i.imgur.com/PgjEPoc.png" alt="logo"><img class="logo-nav" src="https://i.imgur.com/y0EwkY4.png" alt="logo-nav"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!--  <ul class="navbar-nav mr-auto">
-          <li class="nav-item"> <a class="nav-link" href="#how-it-works">How it works <span class="sr-only">(current)</span></a> </li>
-        </ul> -->
+
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"> <a class="nav-link" href="#how-it-works">About</a> </li>
-        <!--  <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Resources </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> <a class="dropdown-item" href="#">Forum</a> <a class="dropdown-item" href="#">API</a> <a class="dropdown-item" href="#">Help center</a> </div>
-          </li> -->
+    
           <li class="nav-item"> <a class="nav-link" href="#features">Mission</a> </li>
           <li class="nav-item"> <a class="nav-link" href="#team">Team</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="signin.html">Contact</a> </li>
-          <li class="nav-item"> <a class="btn btn-primary btn-modal" href="#" data-toggle="modal" data-target="#contact-modal">Login</a> <a class="btn btn-primary btn-nav" href="#hero-section" role="button">Login</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#testimonials">Testimonials</a> </li>
+          <li class="nav-item"> <a class="btn btn-primary btn-modal" href="#" data-toggle="modal" data-target="#contact-modal">Contact</a> <a class="btn btn-primary btn-nav" href="#hero-section" role="button">Contact</a> </li>
         </ul>
       </div>
     </div>
@@ -71,9 +75,6 @@
         <div class="col-lg-12">
           <h1>Patrick_I/O</h1>
           <h2>Amplifying audiology with the power of data.</h2>
-        <!--  <a class="btn btn-primary" href="signup.html" role="button">Create Account</a>
-          <br>
-          <font color="white">Or <a href="">login in</a> if you have an existing account<font></div> -->
       </div>
     </div>
   </section>
@@ -90,7 +91,6 @@
   <div class="container">
     <header class="section-header text-center">
       <h2>About</h2>
-      <h3>Patrick_I/O's impact on it's beneficiaries</h3>
     </header>
     <div class="row">
 
@@ -98,7 +98,7 @@
 
       <div class="col-lg-4"> <img src="https://i.imgur.com/xnyDW5t.png" alt="step-1" data-aos="fade-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-delay="0" data-aos-once="true">
         <h4>1. Patients</h4>
-        <p>Optimizes the patient experience</p>
+        <p>Improving outcomes with thoughtful data sharing and visualization capabilities</p>
       </div>
 
       <!--how it works 1 end-->
@@ -107,7 +107,7 @@
 
       <div class="col-lg-4"> <img src="https://i.imgur.com/eKEQFfr.png" alt="step-2" data-aos="fade-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-delay="1000" data-aos-once="true">
         <h4>2. Practioners</h4>
-        <p></p>
+        <p>Streamlining workflows and introducing analytical tools to help you focus on what you love</p>
       </div>
 
       <!--how it works 2 end-->
@@ -116,7 +116,7 @@
 
       <div class="col-lg-4"> <img src="https://i.imgur.com/cncMGMg.png" alt="step-3" data-aos="fade-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-delay="1500" data-aos-once="true">
         <h4>3. Companies</h4>
-        <p></p>
+        <p>Maximizing the potential of revolutionary products to best serve your customers</p>
       </div>
 
       <!--how it works 3 end-->
@@ -133,71 +133,46 @@
   <div class="container">
     <header class="section-header text-center">
       <h2>Mission</h2>
-      <h3>Rationale behind Patrick_I/O</h3>
     </header>
-    <div class="row">
+  <div class="row">
 
       <!--Feature 1-->
 
 
-      <div class="col-lg-6 order-lg-1">
-        <p><b> The problem </b>is that Cochlear implants (CI's) are revolutionary tools for improving the quality of life for the profoundly deaf.  However, calibrating and personalizing the auditory settings on CIs currently requires audiologists to rely solely on verbal and implicit communication from the patient. </p>
-        <p><a href="#" class="learn-more">Learn more <i class="fas fa-chevron-right"></i></a></p>
+      <div class="col-lg-6">
+      	<img src="https://i.imgur.com/lHhdYNI.png" alt="feature" data-aos="slide-right" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-once="true">
+      	<br>
+      	<br>
+        <p>Cochlear implants (CIs) are revolutionary tools for improving the quality of life for the profoundly deaf. However, calibrating and personalizing the auditory settings on CIs currently requires audiologists to rely solely on verbal and implicit communication from the patient, leaving those without the ability to self-advocate at risk of being under-served.</p>
+        <p> <b>We’re here to change that</b>.</p>
       </div>
 
-<div class="col-lg-4 order-lg-12 text-center"> <img src="https://i.imgur.com/MKdmnqe.png" alt="feature" data-aos="slide-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-once="true"> </div>
+<div class="col-lg-6">
+  <img src="https://i.imgur.com/bBdaTzr.png" alt="feature" data-aos="slide-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-once="true"> 
+<br>
+<br>
+    <p></object>Since 2000, CIs have been FDA-approved for use in eligible children beginning at 12 months of age. For applicable youth, using CI in the early stages of life is critical for their speech and language development. Our technology can increase the efficacy of audio rehabilitation towards optimal development.</p>
 
-      <!--Feature 1 end-->
-    </div>
-    <div class="row">
+ 
+</div>
+
+  <!--Feature 1 end-->
+  <!--  </div>
+    <div class="row"> -->
 
       <!--Feature 2-->
 
-      <div class="col-lg-6 text-center"> <img src="img/feature-2.svg" alt="feature" data-aos="slide-right" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-once="true"> </div>
-      <div class="col-lg-6">
-        <ul class="features-list">
+
+
 
           <!--features-list 1-->
-          <li>
-            <h4><i class="fas fa-check"></i> Countdown timer</h4>
-            <p>Fusce finibus condimentum purus. Sed sagittis erat sed posuere cursus.</p>
-          </li>
-          <!--features-list 1 end-->
 
-          <!--features-list 2-->
-          <li>
-            <h4><i class="fas fa-check"></i> Parallax</h4>
-            <p>Aenean felis odio, laoreet vitae felis ut, laoreet interdum nibh posuere nec sapien.</p>
-          </li>
-          <!--features-list 2 end-->
 
-          <!--features-list 3-->
-          <li>
-            <h4><i class="fas fa-check"></i> Google maps</h4>
-            <p>Nulla sodales est nec purus dapibus, semper luctus velit vulputate. Quisque molestie nibh sapien.</p>
-          </li>
-          <!--features-list 3 end-->
-
-        </ul>
-      </div>
+        </div>
 
       <!--Feature 2 end-->
 
-    </div>
-    <div class="row">
-
-      <!--Feature 3-->
-
-      <div class="col-lg-6 order-lg-12 text-center"> <img src="img/feature-3.svg" alt="feature" data-aos="slide-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-once="true"> </div>
-      <div class="col-lg-6 order-lg-1">
-        <h4>Font awesome 5</h4>
-        <p>Donec a nisi eu massa tincidunt bibendum. Aliquam at justo finibus, pulvinar ipsum nec, euismod velit. Morbi mollis, nunc ac fermentum vehicula, leo turpis sagittis ex, eget consequat leo dui nec dui. Pellentesque viverra dictum odio vitae auctor. </p>
-        <p><a href="#" class="learn-more">Learn more <i class="fas fa-chevron-right"></i></a></p>
-      </div>
-
-      <!--Feature 3 end-->
-
-    </div>
+        </div>
   </div>
 </section>
 
@@ -205,7 +180,7 @@
 
 <!--Reviews-->
 
-<div class="reviews section-spacing text-center">
+<div class="reviews section-spacing text-center" id ="testimonials">
   <div class="container">
     <header class="section-header">
     </header>
@@ -216,9 +191,9 @@
             <!--review 1-->
 
             <blockquote> <i class="fas fa-quote-left fa-3x"></i>
-              <p>Our challenge at MedHacks is to design a technology that improves Patient Safety & Quality. We decided to choose a topic that touches close to home to all of our team members. </p>
-              <figure><img src="img/logo.png" alt="user" class="rounded-circle"> </figure>
-              <cite>Team Patrick_I/O<span>MedHacks 2018</span></cite> </blockquote>
+              <p>Best hackathon project of the year by far!</p>
+              <figure><img src="img/review-3.jpg" alt="user" class="rounded-circle"> </figure>
+              <cite>Patricia Davidson<span>Dean of the Johns Hopins School of Nursing</span></cite> </blockquote>
 
             <!--review 1 end-->
           </li>
@@ -236,9 +211,9 @@
             <!--review 3-->
 
             <blockquote> <i class="fas fa-quote-left fa-3x"></i>
-              <p>Best hackathon project of the year by far!</p>
-              <figure><img src="img/review-3.jpg" alt="user" class="rounded-circle"> </figure>
-              <cite>Patricia Davidson<span>Dean of the Johns Hopins School of Nursing</span></cite> </blockquote>
+              <p>Patrick_I/O is my favorite team ever!</p>
+              <figure><img src="img/review-1.png" alt="user" class="rounded-circle"> </figure>
+              <cite>Melvin the Moose<span>MedHacks 2018</span></cite> </blockquote>
 
             <!--review 3 end-->
           </li>
@@ -340,20 +315,11 @@
         <figure> <img src="https://i.imgur.com/gLEDA6p.png" alt="client"> </figure>
       </li>
       <li class="col-md-4">
-        <figure> <img src="https://i.imgur.com/3JS32rH.png" alt="client" max-width="70px"> </figure>
+        <figure> <img src="img/mlh.png" alt="client"> </figure>
       </li>
       <li class="col-md-4">
-        <figure> <img src="https://i.imgur.com/NXy6rMk.png" alt="client"> </figure>
+        <figure> <img src="https://i.imgur.com/NXy6rMk.png" alt="client" > </figure>
       </li>
-    <!--  <li class="col-md-2">
-        <figure> <img src="img/client-4.svg" alt="client"> </figure>
-      </li>
-      <li class="col-md-2">
-        <figure> <img src="img/client-5.svg" alt="client"> </figure>
-      </li>
-      <li class="col-md-2">
-        <figure> <img src="img/client-6.svg" alt="client"> </figure>
-      </li> -->
     </ul>
   </div>
 </section>
@@ -399,7 +365,7 @@
             <div class="team-member"><img src="img/veronikaa.jpg" alt="team"></div>
             <div class="team-social">
               <ul class="social">
-                <h6><font color ="white">Varnikaa is a sophomore at Queen's University pursing a career in medical sciences. She is passionate about bringing constructive change through science and technology. She finds value in learning experiences and the exploration of new ideas - feel free to reach out to her! </font></h6>
+                <h6><font color ="white">Varnikaa is a sophomore at Queen's University pursing a career in medical sciences. She is passionate about bringing constructive change through science and technology. She finds value in learning experiences and the exploration of new ideas. </font></h6>
               </ul>
             </div>
           </figure>
@@ -445,9 +411,7 @@
             <div class="team-member"><img src="img/henry.jpg" alt="team"></div>
             <div class="team-social">
               <ul class="social">
-                <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
-                <li><a href="#"><i class="fab fa-facebook-f fa-lg"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
+                <h6><font color="white">Henry is currently a mechanical engineer on co-op at Intuitive Surgical, and will return to Carnegie Mellon University for his senior year of a joint M.S. in Biomedical Engineering and B.S. in Mechanical Engineering.  His love of all things medical device has led him to work in emerging spaces in medical robotics, virtual reality, and wearable technology.</font></h6>
               </ul>
             </div>
           </figure>
@@ -490,13 +454,11 @@
 <section class="cta section-spacing text-center">
   <div class="container">
     <header class="section-header text-center">
-      <h2>Get started for free</h2>
-      <h3>Join our fast growing community of 3400+ users</h3>
+      <img src = "img/logo_dark.png">
     </header>
     <div class="row">
       <div class="col-lg-12">
-        <div data-aos="fade" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-once="true"><a class="btn btn-primary" href="#hero-section" role="button">Signup For Free</a></div>
-        <p>Have a question? Give us a call <a href="tel:+16582144789"> 658-214-4789</a>.</p>
+        <p>This project was for the JHU MedHack 2018 Patient Safety and Quality Track. The challenge was to design a technology that improves quality of patient safety. We chose to tackle a health issue that hits home to all of our team members. We hope you've enjoyed exploring our project!</p>
       </div>
     </div>
   </div>
@@ -509,60 +471,15 @@
 <footer class="site-footer section-spacing">
   <div class="container">
     <div class="row">
-      <div class="col-lg-3"> <a href="#"><img class="logo-nav" src="https://i.imgur.com/GX4CEzf.png" alt="logo-footer"></a> </div>
+   
       <div class="col-lg-2">
-        <ul class="footer-nav">
-          <li>
-            <h3>Company</h3>
-          </li>
-          <li><a href="#hero-section">Home</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Press</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-2">
-        <ul class="footer-nav">
-          <li>
-            <h3>Resources</h3>
-          </li>
-          <li><a href="#">Forum</a></li>
-          <li><a href="#">API</a></li>
-          <li><a href="#">Help center</a></li>
-          <li><a href="#">Pricing</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-3">
-        <ul class="footer-address">
-          <li>
-            <h3>Contact</h3>
-          </li>
-          <li>1600 Amphitheatre Parkway Mountain View, CA 94043 </li>
-          <li><a href="tel:+1856-236-1853">+1856-236-1853</a></li>
-          <li><a href="https://www.google.com/maps/place/Park+Ave,+Manalapan+Township,+NJ+07726,+USA/@40.2548289,-74.3890071,17z/data=!3m1!4b1!4m8!1m2!2m1!1s4751+Clarksburg+Park+Road!3m4!1s0x89c3d7a014e572c5:0x58a9a59d49507be0!8m2!3d40.2548289!4d-74.3868184" target="_blank">Locate on google map</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-2">
-        <h3 class="social-head">Follow us</h3>
-        <ul class="social">
-          <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
-          <li><a href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
-          <li><a href="#"><i class="fab fa-facebook-f fa-lg"></i></a></li>
-          <li><a href="#"><i class="fab fa-pinterest fa-lg"></i></a></li>
-        </ul>
+        
       </div>
     </div>
     <hr class="footer-divider">
     <div class="row">
       <div class="col-lg-6">
-        <p> © 2018 Startr. All rights reserved.</p>
-      </div>
-      <div class="col-lg-6">
-        <ul class="terms-privacy">
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Cookies</a></li>
-        </ul>
+        <p> © 2018 Patrick_I/O All rights reserved.</p>
       </div>
     </div>
   </div>
