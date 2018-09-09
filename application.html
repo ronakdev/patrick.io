@@ -71,20 +71,18 @@
 		    <div class="row">
 		        <div class="col-4 col-md-4">
 		            <h3>Step 1</h3>
-		            <p>This is what the first part of the procedure is.
-		                Lorem ipsum dolor amet mlkshk gluten-free iPhone, hella viral ramps af. Man braid photo booth biodiesel, +1 yuccie hot chicken plaid polaroid tote bag thundercats austin neutra 
+		            <p>Have the patient don the head set with the band portion snugly contacting the skin of the forehead. WHen ready to begin, click the “begin relaxing” button.  Visually confirm with the data output that the headset is streaming to the computer, ensuring that power is on and bluetooth is enabled.
 		            </p>
 		        </div>
 		        <div class="col-4 col-md-4">
-		            <h3>Step 1</h3>
-		            <p>This is what the first part of the procedure is.
-		                Lorem ipsum dolor amet mlkshk gluten-free iPhone, hella viral ramps af. Man braid photo booth biodiesel, +1 yuccie hot chicken plaid polaroid tote bag thundercats austin neutra literally. 
+		            <h3>Step 2</h3>
+		            <p>Bring the patient to a reasonable resting state and visually identify an approximate homeostatic home-base.  Once the data levels out, click the “establish baseline” button to set the value,  Adjust the slider to widen or tighten the target tolerance region.
+
 		            </p>
 		        </div>
 		        <div class="col-4 col-md-4">
-		            <h3>Step 1</h3>
-		            <p>This is what the first part of the procedure is.
-		                Lorem ipsum dolor amet mlkshk gluten-free iPhone, hella viral ramps af. Man braid photo booth biodiesel, +1 yuccie hot chicken plaid polaroid tote bag thundercats austin neutra literally.
+		            <h3>Step 3</h3>
+		            <p>Adjust patient CI electrodes, slowly monitoring the data trend which follows.  When electrode settings which stabilize the data within the desired tolerance zone are achieved, remove the headset and lock in the new CI calibration.
 		            </p>
 		        </div>
 		    </div>
@@ -142,7 +140,7 @@
 			}
 			
 
-			console.log(`DATA: ${data}`)
+
 
 			EEG1.append(new Date().getTime(), ((data[1]+data[2])/2) - 1000)
 
@@ -158,18 +156,23 @@
 		  // console.log("in setInterval")
 		  console.log(`average: ${ave}`)
 		  if (ave !=-1){
-		  	
-		  	TopConstant.append(new Date().getTime(), (ave + delta) - 1000) // what is this
-		  	BottomConstant.append(new Date().getTime(), (ave - delta) - 1000)
+		  	console.log(`Ave: ${ave}, delta: ${delta}`)
+		  	let top = ave+delta - 1000
+		  	let bottom = ave-delta - 1000
+		  	console.log(`top: ${top}, bottom: ${bottom}`)
+		  	TopConstant.append(new Date().getTime(), top) // what is this
+		  	BottomConstant.append(new Date().getTime(), bottom)
+		  } else {
+		  	console.log('else')
 		  }
 		  console.log("end of setInterval")
 		  
-		}, 1000);
+		}, 500);
 
 		smoothie.addTimeSeries(EEG1, {lineWidth:3.4,strokeStyle:'#c2f3ff'});
 		smoothie.addTimeSeries(TopConstant, {lineWidth: 3.4, strokeStyle: '#7841e5'}) ;
 		smoothie.addTimeSeries(BottomConstant, {lineWidth: 3.4, strokeStyle: 'red'}) ;
-		smoothie.streamTo(canvas, 1000) ; 
+		smoothie.streamTo(canvas, 500) ; 
 
 	</script>
 
