@@ -14,7 +14,7 @@ app.get('/application', function(req, res){
 		io.emit('eeg-data', data)
 	})
 	let connector = new MuseConnector(6000)
-  	res.sendFile(__dirname + '/index.html');
+  	res.sendFile(__dirname + '/application.html');
 });
 
 // io.on('connection', function(socket){
