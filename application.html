@@ -12,62 +12,89 @@
 			body {
 				font-family: 'Roboto', sans-serif;
 			}
+			.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
 		</style>
 	</head>
 
-	<body><br/>
-		<div class="container">
-  <div class="row">
-    <img src="https://i.imgur.com/GX4CEzf.png">
-  </div><br/>
-
-  <div class="row">
-
-  <div class="col-12 center">
-  	<center>
-	<canvas id="smoothie-chart" width = "1000" height="400"></canvas>
-</center>
-  </div>
-  	<button id = "myButton" onclick="myJS()">Click Here</button>
-  </div>	
-</div>
-<br/>
-<br/>
-<div class="row">
-  <div class="col-4 col-md-4">
-  	
-  	<h3>Step 1</h3>
-  	<p>This is what the first part of the procedure is.
-  		Lorem ipsum dolor amet mlkshk gluten-free iPhone, hella viral ramps af. Man braid photo booth biodiesel, +1 yuccie hot chicken plaid polaroid tote bag thundercats austin neutra 
-  	</p>
-  </div>
-<div class="col-4 col-md-4">
-  	
-  	<h3>Step 1</h3>
-  	<p>This is what the first part of the procedure is.
-  		Lorem ipsum dolor amet mlkshk gluten-free iPhone, hella viral ramps af. Man braid photo booth biodiesel, +1 yuccie hot chicken plaid polaroid tote bag thundercats austin neutra literally. 
-  	</p>
-  </div>
-  <div class="col-4 col-md-4">
-  	
-  	<h3>Step 1</h3>
-  	<p>This is what the first part of the procedure is.
-  		Lorem ipsum dolor amet mlkshk gluten-free iPhone, hella viral ramps af. Man braid photo booth biodiesel, +1 yuccie hot chicken plaid polaroid tote bag thundercats austin neutra literally.
-  	</p>
-  </div>
-  
-
-
-    
-  </div>
-
+	<body>
+	    <div class="container">
+		    <div class="row">
+		        <img src="https://i.imgur.com/GX4CEzf.png">
+		    </div>
+		    <br/>
+		    <div class="row">
+		        <div class="col-12 center">
+		            <center>
+		                <canvas id="smoothie-chart" width = "1000" height="400"></canvas>
+		            </center>
+		        </div>
+		        <button id = "myButton" onclick="myJS()">Begin Relaxing</button> <h4>Range: <span id="rangeLabel">50</span></h4>
+		    </div>
+		    <br/>
+		    <br/>
+		    <div class="row">
+	    	  <input type="range" min="0" max="300" value="150" class="slider" id="myRange" onchange="delta = this.value ; document.getElementById('rangeLabel').innerHTML = this.value">
+	    	</div>
+		    <div class="row">
+		        <div class="col-4 col-md-4">
+		            <h3>Step 1</h3>
+		            <p>This is what the first part of the procedure is.
+		                Lorem ipsum dolor amet mlkshk gluten-free iPhone, hella viral ramps af. Man braid photo booth biodiesel, +1 yuccie hot chicken plaid polaroid tote bag thundercats austin neutra 
+		            </p>
+		        </div>
+		        <div class="col-4 col-md-4">
+		            <h3>Step 1</h3>
+		            <p>This is what the first part of the procedure is.
+		                Lorem ipsum dolor amet mlkshk gluten-free iPhone, hella viral ramps af. Man braid photo booth biodiesel, +1 yuccie hot chicken plaid polaroid tote bag thundercats austin neutra literally. 
+		            </p>
+		        </div>
+		        <div class="col-4 col-md-4">
+		            <h3>Step 1</h3>
+		            <p>This is what the first part of the procedure is.
+		                Lorem ipsum dolor amet mlkshk gluten-free iPhone, hella viral ramps af. Man braid photo booth biodiesel, +1 yuccie hot chicken plaid polaroid tote bag thundercats austin neutra literally.
+		            </p>
+		        </div>
+		    </div>
+		</div>
 	</body>
 
-
-<script src="/socket.io/socket.io.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothie/1.34.0/smoothie.min.js"></script>
 	<script>
-		var smoothie = new SmoothieChart({grid:{strokeStyle:'#009bff'}}),
+		var smoothie = new SmoothieChart({maxValue: 1000, minValue: -1000, grid:{strokeStyle:'#009bff'}}),
 	    canvas = document.getElementById('smoothie-chart')
 
 
@@ -77,17 +104,28 @@
 		let timeElapsed = -1
 		let socket = io();
 		let baseline = 0 // updated
-		let delta = 0 // this is the allowed delta
+		var delta = 50 // this is arbitrary
 		let x = 0
 		let ave = -1
+		let b1Avg = 0
+		let b2Avg = 0
+
+		let measuring = false
 		function myJS(){
-			alert()
-			if(x==0){
-				console.log("first time")
-				x=1
+			if (x == 0) {
+				measuring = true
+				x = 1
+				document.getElementById('myButton').innerHTML = "Establish Baseline with current data"
+			} else if (x == 1) {
+				measuring = false
+				// get b1 and b2 avg
+
+				ave = ((b1Avg+b2Avg)/2) 
+				x = 2
+				document.getElementById('myButton').style.display = 'none' // hide button
 			}
-			console.log("second time")
 		}
+
 		socket.on('eeg-data', function(data){
 			// data is broken into time and b1 and b2 (time, temple, forehead respectively)
 
@@ -98,24 +136,16 @@
 				// 99         100    99
 				timeElapsed += (time - timeElapsed)
 			} */
-
-				if (x==1){
-					console.log("button is clicked second time")
-					let temple = data[1]
-					let forehead = data[2]
-					let ave = ((temple+forehead)/2) 
-					let button = document.getElementById("myButton")
-					button.style.display == 'block' ;
-					x=0;
-				}
+			if (measuring) {
+				b1Avg = (b1Avg + data[1]) / 2
+				b2Avg = (b2Avg + data[2]) / 2
+			}
 			
-			
-				
-			console.log(ave)
 
-			debugger;
+			console.log(`DATA: ${data}`)
 
-			EEG1.append(new Date().getTime(), (data[1]+data[2])/2)
+			EEG1.append(new Date().getTime(), ((data[1]+data[2])/2) - 1000)
+
 	    });
 
 		setInterval(function() {
@@ -125,11 +155,12 @@
 		  // 	return 30
 		  // });
 
-		  console.log("in setInterval")
+		  // console.log("in setInterval")
+		  console.log(`average: ${ave}`)
 		  if (ave !=-1){
-		  	console.log("average already set")
-		  	TopConstant.append(new Date().getTime(), ave + 0.2) ;
-		  	BottomConstant.append(new Date().getTime(), ave - 0.2) ;
+		  	
+		  	TopConstant.append(new Date().getTime(), (ave + delta) - 1000) // what is this
+		  	BottomConstant.append(new Date().getTime(), (ave - delta) - 1000)
 		  }
 		  console.log("end of setInterval")
 		  
@@ -137,9 +168,10 @@
 
 		smoothie.addTimeSeries(EEG1, {lineWidth:3.4,strokeStyle:'#c2f3ff'});
 		smoothie.addTimeSeries(TopConstant, {lineWidth: 3.4, strokeStyle: '#7841e5'}) ;
-		smoothie.addTimeSeries(BottomConstant, {lineWidth: 3.4, strokeStyle: '#7841e5'}) ;
-		smoothie.streamTo(canvas, 500) ; 
+		smoothie.addTimeSeries(BottomConstant, {lineWidth: 3.4, strokeStyle: 'red'}) ;
+		smoothie.streamTo(canvas, 1000) ; 
 
 	</script>
+
 </html>	
 
